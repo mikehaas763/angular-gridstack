@@ -1,0 +1,15 @@
+{
+  "name": "angular-gridstack",
+  "version": "1.0.0",
+  "description": "An AngularJS directive binding for gridstack.js",
+  "author": "Mike Haas",
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "^1.4.3",
+    "gridstack": "^0.2.3",
+    "gulp": "gulpjs/gulp#4.0",
+    "jquery": "^2.1.4",
+    "lodash": "^3.10.0",
+    "systemjs-builder": "^0.12.2"
+  }
+}

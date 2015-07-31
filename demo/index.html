@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Gridstack</title>
+    <script src="../node_modules/lodash/index.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+    <script src="../node_modules/gridstack/dist/gridstack.js"></script>
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../dist/angular-gridstack.js"></script>
+    <script>
+        angular.module('app', ['Gridstack.AngularBinding'])
+                .controller('AppController', AppController);
+
+        function AppController() {
+            this.options = {
+                animate: true,
+                cell_height: 80,
+                vertical_margin: 20
+            };
+            this.widgetA = 'Widget A';
+            this.widgetB = 'Widget B';
+        }
+    </script>
+
+    <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.css"/>
+    <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.structure.css"/>
+    <link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui.theme.css"/>
+    <link rel="stylesheet" href="../node_modules/gridstack/dist/gridstack.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+        .grid-stack-item-content {
+            background-color: #0073ea;
+        }
+    </style>
+</head>
+<body ng-controller="AppController as app">
+<div gridstack-grid gridstack-options="app.options" class="grid-stack">
+    <div class="grid-stack-item"
+         data-gs-x="0" data-gs-y="0"
+         data-gs-width="4" data-gs-height="2">
+        <div class="grid-stack-item-content">
+            <p>{{ app.widgetA }}</p>
+            <input type="text" ng-model="app.widgetA" />
+        </div>
+    </div>
+    <div class="grid-stack-item"
+         data-gs-x="4" data-gs-y="0"
+         data-gs-width="4" data-gs-height="4">
+        <div class="grid-stack-item-content">
+            <p>{{ ::app.widgetB }}</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
